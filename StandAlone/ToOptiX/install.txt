@@ -1,0 +1,44 @@
+1. Step install python packages
+
+a) Automatic installation 
+Windows
+-----------------
+Use the software pip and install the following packages
+enum34-1.1.2
+numpy-stl-1.7.1
+python-utils-1.6.2
+-----------------
+Linux
+-----------------
+You can also use pip but there are another ways for installing it automatic
+Type the following commands in a terminal (Debian, Ubuntu, Linux Mint ...)
+sudo apt-get install python-enum*
+sudo apt-get install python-numpy*
+sudo apt-get install Python-utils-*
+sudo apt-get update
+sudo apt-get upgrade
+Or use the grafic way on the ubuntu software center
+----------------
+
+b) Manual installation
+- open the folder PythonPackages which is loacated in the Stand_Alone_Release
+and install the packages.
+- Search for the python file setup.py in each packages
+- use a termianl or a command window and type
+python setup.py --install
+
+2. Step Setting the solver (Abqus cant be use)
+Replace the following path variables for the FEM-Solver in
+#------- Location ---------
+Stand_Alone_Release...\runTopo.py
+#------- Location ---------
+go to the python function "def get_path" and change the path variables
+def get_path(Type):
+# Install paths --------------
+    if Type == "Octave":
+        return "/usr/bin/octave"
+    if Type == "CCX":
+        return "/usr/local/bin/ccx"
+    if Type == "Abaqus":
+        return "/usr/local/bin/abaqus"
+# Install paths --------------
